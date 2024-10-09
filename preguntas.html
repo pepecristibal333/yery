@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario sobre LDAP y Active Directory</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .question {
+            background-color: #ecf0f1;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .question:hover {
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        .question p {
+            font-weight: bold;
+            margin-top: 0;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        label:hover {
+            color: #3498db;
+        }
+        .feedback {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .correct {
+            background-color: #2ecc71;
+            color: #fff;
+        }
+        .incorrect {
+            background-color: #e74c3c;
+            color: #fff;
+        }
+        .progress {
+            margin-top: 20px;
+            background-color: #ecf0f1;
+            height: 30px;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        .progress-bar {
+            width: 0;
+            height: 100%;
+            background-color: #3498db;
+            transition: width 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cuestionario sobre LDAP y Active Directory</h1>
+        <form id="quizForm">
+            <div class="question">
+                <p>1. ¿Qué es Active Directory?</p>
+                <label>
+                    <input type="radio" name="q1" value="a"> a) Un sistema operativo
+                </label>
+                <label>
+                    <input type="radio" name="q1" value="b" data-correct="true"> b) Una herramienta de administración centralizada para gestionar recursos en red
+                </label>
+                <label>
+                    <input type="radio" name="q1" value="c"> c) Un protocolo de red
+                </label>
+                <label>
+                    <input type="radio" name="q1" value="d"> d) Un tipo de firewall
+                </label>
+                <div class="feedback correct">¡Correcto! Active Directory es una herramienta de administración centralizada.</div>
+                <div class="feedback incorrect">Incorrecto. Active Directory es una herramienta de administración centralizada para gestionar recursos en red.</div>
+            </div>
+
+            <div class="question">
+                <p>2. ¿Dónde se almacenan los recursos de red en Active Directory?</p>
+                <label>
+                    <input type="radio" name="q2" value="a"> a) En múltiples ubicaciones dispersas
+                </label>
+                <label>
+                    <input type="radio" name="q2" value="b"> b) En la nube
+                </label>
+                <label>
+                    <input type="radio" name="q2" value="c" data-correct="true"> c) En un único lugar centralizado
+                </label>
+                <label>
+                    <input type="radio" name="q2" value="d"> d) En cada computadora individual
+                </label>
+                <div class="feedback correct">¡Correcto! Los recursos se almacenan en un único lugar centralizado.</div>
+                <div class="feedback incorrect">Incorrecto. Los recursos de red en Active Directory se almacenan en un único lugar centralizado.</div>
+            </div>
+
+            <div class="question">
+                <p>3. ¿Cuáles son los tres niveles principales de Active Directory?</p>
+                <label>
+                    <input type="radio" name="q3" value="a"> a) Usuarios, Grupos, Computadoras
+                </label>
+                <label>
+                    <input type="radio" name="q3" value="b" data-correct="true"> b) Dominios, Árboles, Bosques
+                </label>
+                <label>
+                    <input type="radio" name="q3" value="c"> c) Local, Global, Universal
+                </label>
+                <label>
+                    <input type="radio" name="q3" value="d"> d) Raíz, Ramas, Hojas
+                </label>
+                <div class="feedback correct">¡Correcto! Los tres niveles principales son Dominios, Árboles y Bosques.</div>
+                <div class="feedback incorrect">Incorrecto. Los tres niveles principales de Active Directory son Dominios, Árboles y Bosques.</div>
+            </div>
+            
+            <div class="question">
+                <p>4. ¿Qué es un dominio en Active Directory?</p>
+                <label>
+                    <input type="radio" name="q4" value="a"> a) Una dirección web
+                </label>
+                <label>
+                    <input type="radio" name="q4" value="b" data-correct="true"> b) Un grupo de objetos relacionados entre sí
+                </label>
+                <label>
+                    <input type="radio" name="q4" value="c"> c) Un tipo de contraseña
+                </label>
+                <label>
+                    <input type="radio" name="q4" value="d"> d) Un protocolo de red
+                </label>
+                <div class="feedback correct">¡Correcto! Un dominio es un grupo de objetos relacionados entre sí.</div>
+                <div class="feedback incorrect">Incorrecto. Un dominio en Active Directory es un grupo de objetos relacionados entre sí.</div>
+            </div>
+            
+            <div class="question">
+                <p>5. ¿Qué es un bosque en Active Directory?</p>
+                <label>
+                    <input type="radio" name="q5" value="a" data-correct="true"> a) Una colección de árboles de dominio
+                </label>
+                <label>
+                    <input type="radio" name="q5" value="b"> b) Un tipo de política de grupo
+                </label>
+                <label>
+                    <input type="radio" name="q5" value="c"> c) Un método de autenticación
+                </label>
+                <label>
+                    <input type="radio" name="q5" value="d"> d) Un tipo de unidad organizativa
+                </label>
+                <div class="feedback correct">¡Correcto! Un bosque es una colección de árboles de dominio.</div>
+                <div class="feedback incorrect">Incorrecto. Un bosque en Active Directory es una colección de árboles de dominio.</div>
+            </div>
+            
+            <div class="question">
+                <p>6. ¿Cuáles son los dos tipos de relaciones de confianza en Active Directory?</p>
+                <label>
+                    <input type="radio" name="q6" value="a"> a) Fuerte y Débil
+                </label>
+                <label>
+                    <input type="radio" name="q6" value="b"> b) Primaria y Secundaria
+                </label>
+                <label>
+                    <input type="radio" name="q6" value="c" data-correct="true"> c) Unidireccional y Bidireccional
+                </label>
+                <label>
+                    <input type="radio" name="q6" value="d"> d) Interna y Externa
+                </label>
+                <div class="feedback correct">¡Correcto! Los dos tipos son Unidireccional y Bidireccional.</div>
+                <div class="feedback incorrect">Incorrecto. Los dos tipos de relaciones de confianza en Active Directory son Unidireccional y Bidireccional.</div>
+            </div>
+            
+            <div class="question">
+                <p>7. ¿Qué es un Controlador de Dominio?</p>
+                <label>
+                    <input type="radio" name="q7" value="a"> a) Un dispositivo de red
+                </label>
+                <label>
+                    <input type="radio" name="q7" value="b" data-correct="true"> b) Un servidor que ejecuta Active Directory Domain Services
+                </label>
+                <label>
+                    <input type="radio" name="q7" value="c"> c) Un tipo de firewall
+                </label>
+                <label>
+                    <input type="radio" name="q7" value="d"> d) Un programa antivirus
+                </label>
+                <div class="feedback correct">¡Correcto! Un Controlador de Dominio es un servidor que ejecuta Active Directory Domain Services.</div>
+                <div class="feedback incorrect">Incorrecto. Un Controlador de Dominio es un servidor que ejecuta Active Directory Domain Services.</div>
+            </div>
+            
+            <div class="question">
+                <p>8. ¿Cuál es la función del Global Catalog?</p>
+                <label>
+                    <input type="radio" name="q8" value="a"> a) Almacenar contraseñas
+                </label>
+                <label>
+                    <input type="radio" name="q8" value="b" data-correct="true"> b) Contener información de todos los objetos del bosque
+                </label>
+                <label>
+                    <input type="radio" name="q8" value="c"> c) Administrar las políticas de grupo
+                </label>
+                <label>
+                    <input type="radio" name="q8" value="d"> d) Controlar el tráfico de red
+                </label>
+                <div class="feedback correct">¡Correcto! El Global Catalog contiene información de todos los objetos del bosque.</div>
+                <div class="feedback incorrect">Incorrecto. La función del Global Catalog es contener información de todos los objetos del bosque.</div>
+            </div>
+            
+            <div class="question">
+                <p>9. ¿Qué protocolo se usa para la autenticación en Active Directory?</p>
+                <label>
+                    <input type="radio" name="q9" value="a"> a) HTTP
+                </label>
+                <label>
+                    <input type="radio" name="q9" value="b"> b) FTP
+                </label>
+                <label>
+                    <input type="radio" name="q9" value="c" data-correct="true"> c) Kerberos
+                </label>
+                <label>
+                    <input type="radio" name="q9" value="d"> d) SMTP
+                </label>
+                <div class="feedback correct">¡Correcto! Kerberos es el protocolo usado para la autenticación en Active Directory.</div>
+                <div class="feedback incorrect">Incorrecto. El protocolo usado para la autenticación en Active Directory es Kerberos.</div>
+            </div>
+            
+            <div class="question">
+                <p>10. ¿Qué son las Unidades Organizativas (OU)?</p>
+                <label>
+                    <input type="radio" name="q10" value="a"> a) Grupos de usuarios
+                </label>
+                <label>
+                    <input type="radio" name="q10" value="b" data-correct="true"> b) Contenedores lógicos que agrupan objetos similares
+                </label>
+                <label>
+                    <input type="radio" name="q10" value="c"> c) Tipos de servidores
+                </label>
+                <label>
+                    <input type="radio" name="q10" value="d"> d) Protocolos de red
+                </label>
+                <div class="feedback correct">¡Correcto! Las Unidades Organizativas son contenedores lógicos que agrupan objetos similares.</div>
+                <div class="feedback incorrect">Incorrecto. Las Unidades Organizativas (OU) son contenedores lógicos que agrupan objetos similares.</div>
+            </div>
+            
+            <div class="question">
+                <p>11. ¿Cuál es la diferencia entre grupos de distribución y grupos de seguridad?</p>
+                <label>
+                    <input type="radio" name="q11" value="a" data-correct="true"> a) Los grupos de distribución son solo para correo electrónico, los de seguridad pueden asignar derechos y permisos
+                </label>
+                <label>
+                    <input type="radio" name="q11" value="b"> b) Los grupos de seguridad son solo para correo electrónico, los de distribución pueden asignar derechos y permisos
+                </label>
+                <label>
+                    <input type="radio" name="q11" value="c"> c) No hay diferencia
+                </label>
+                <label>
+                    <input type="radio" name="q11" value="d"> d) Los grupos de distribución son para usuarios, los de seguridad para computadoras
+                </label>
+                <div class="feedback correct">¡Correcto! Los grupos de distribución son solo para correo electrónico, mientras que los de seguridad pueden asignar derechos y permisos.</div>
+                <div class="feedback incorrect">Incorrecto. Los grupos de distribución son solo para correo electrónico, mientras que los grupos de seguridad pueden asignar derechos y permisos.</div>
+            </div>
+            
+            <div class="question">
+                <p>12. ¿Qué son las zonas de búsqueda inversa en DNS?</p>
+                <label>
+                    <input type="radio" name="q12" value="a"> a) Zonas que convierten nombres a direcciones IP
+                </label>
+                <label>
+                    <input type="radio" name="q12" value="b" data-correct="true"> b) Zonas que convierten direcciones IP a nombres
+                </label>
+                <label>
+                    <input type="radio" name="q12" value="c"> c) Zonas que bloquean ciertos dominios
+                </label>
+                <label>
+                    <input type="radio" name="q12" value="d"> d) Zonas que aceleran las búsquedas DNS
+                </label>
+                <div class="feedback correct">¡Correcto! Las zonas de búsqueda inversa convierten direcciones IP a nombres.</div>
+                <div class="feedback incorrect">Incorrecto. Las zonas de búsqueda inversa en DNS son las que convierten direcciones IP a nombres.</div>
+            </div>
+            
+            <div class="question">
+                <p>13. ¿Cuáles son los tres ámbitos de grupo en Active Directory?</p>
+                <label>
+                    <input type="radio" name="q13" value="a"> a) Pequeño, Mediano, Grande
+                </label>
+                <label>
+                    <input type="radio" name="q13" value="b"> b) Local, Regional, Global
+                </label>
+                <label>
+                    <input type="radio" name="q13" value="c" data-correct="true"> c) Dominio local, Global, Universal
+                </label>
+                <label>
+                    <input type="radio" name="q13" value="d"> d) Interno, Externo, Mixto
+                </label>
+                <div class="feedback correct">¡Correcto! Los tres ámbitos son Dominio local, Global y Universal.</div>
+                <div class="feedback incorrect">Incorrecto. Los tres ámbitos de grupo en Active Directory son Dominio local, Global y Universal.</div>
+            </div>
+            
+            <div class="question">
+                <p>14. ¿Qué es DHCP y cuál es su función?</p>
+                <label>
+                    <input type="radio" name="q14" value="a"> a) Un protocolo de seguridad que protege contra intrusos
+                </label>
+                <label>
+                    <input type="radio" name="q14" value="b" data-correct="true"> b) Un protocolo que asigna direcciones IP automáticamente
+                </label>
+                <label>
+                    <input type="radio" name="q14" value="c"> c) Un tipo de firewall
+                </label>
+                <label>
+                    <input type="radio" name="q14" value="d"> d) Un método de encriptación de datos
+                </label>
+                <div class="feedback correct">¡Correcto! DHCP es un protocolo que asigna direcciones IP automáticamente.</div>
+                <div class="feedback incorrect">Incorrecto. DHCP es un protocolo que asigna direcciones IP automáticamente.</div>
+            </div>
+            
+            <div class="question">
+                <p>15. ¿Qué tipos de copias de seguridad se mencionan en el resumen?</p>
+                <label>
+                    <input type="radio" name="q15" value="a"> a) Diaria, Semanal, Mensual
+                </label>
+                <label>
+                    <input type="radio" name="q15" value="b"> b) Completa, Incremental, Diferencial
+                </label>
+                <label>
+                    <input type="radio" name="q15" value="c" data-correct="true"> c) Normal, Personalizada, Incremental
+                </label>
+                <label>
+                    <input type="radio" name="q15" value="d"> d) Local, En la nube, Híbrida
+                </label>
+                <div class="feedback correct">¡Correcto! Los tipos mencionados son Normal, Personalizada e Incremental.</div>
+                <div class="feedback incorrect">Incorrecto. Los tipos de copias de seguridad mencionados son Normal, Personalizada e Incremental.</div>
+            </div>
+            
+            <div class="question">
+                <p>16. ¿Qué son las GPO?</p>
+                <label>
+                    <input type="radio" name="q16" value="a"> a) Grupos de Protección Organizacional
+                </label>
+                <label>
+                    <input type="radio" name="q16" value="b"> b) Gestión de Procesos Operativos
+                </label>
+                <label>
+                    <input type="radio" name="q16" value="c" data-correct="true"> c) Políticas de Grupo
+                </label>
+                <label>
+                    <input type="radio" name="q16" value="d"> d) Grupos de Preferencias Organizativas
+                </label>
+                <div class="feedback correct">¡Correcto! GPO significa Políticas de Grupo (Group Policy Objects).</div>
+                <div class="feedback incorrect">Incorrecto. GPO significa Políticas de Grupo (Group Policy Objects).</div>
+            </div>
+
+            <div class="question">
+                <p>57. ¿Qué es URI en el contexto de la configuración LDAP?</p>
+                <label>
+                    <input type="radio" name="q57" value="a"> a) User Resource Identifier
+                </label>
+                <label>
+                    <input type="radio" name="q57" value="b" data-correct="true"> b) Uniform Resource Identifier
+                </label>
+                <label>
+                    <input type="radio" name="q57" value="c"> c) Unique Resource Index
+                </label>
+                <label>
+                    <input type="radio" name="q57" value="d"> d) LDAP Data Access Point
+                </label>
+                <div class="feedback correct">¡Correcto! URI significa Uniform Resource Identifier en este contexto.</div>
+                <div class="feedback incorrect">Incorrecto. URI en el contexto de la configuración LDAP significa Uniform Resource Identifier.</div>
+            </div>
+
+            <div class="question">
+                <p>17. ¿Pueden las GPO ser asociadas a grupos?</p>
+                <label>
+                    <input type="radio" name="q17" value="a"> a) Sí, a cualquier tipo de grupo
+                </label>
+                <label>
+                    <input type="radio" name="q17" value="b" data-correct="true"> b) No, no pueden ser asociadas a grupos
+                </label>
+                <label>
+                    <input type="radio" name="q17" value="c"> c) Solo a grupos de seguridad
+                </label>
+                <label>
+                    <input type="radio" name="q17" value="d"> d) Solo a grupos de distribución
+                </label>
+                <div class="feedback correct">¡Correcto! Las GPO no pueden ser asociadas directamente a grupos.</div>
+                <div class="feedback incorrect">Incorrecto. Las GPO no pueden ser asociadas directamente a grupos.</div>
+            </div>
+            
+            <div class="question">
+                <p>18. ¿Cuál es la jerarquía de aplicación de las GPO?</p>
+                <label>
+                    <input type="radio" name="q18" value="a"> a) Dominio, OU, Sitio
+                </label>
+                <label>
+                    <input type="radio" name="q18" value="b" data-correct="true"> b) Sitio, Dominio, OU (de principal a secundaria)
+                </label>
+                <label>
+                    <input type="radio" name="q18" value="c"> c) OU, Dominio, Sitio
+                </label>
+                <label>
+                    <input type="radio" name="q18" value="d"> d) No hay jerarquía, se aplican aleatoriamente
+                </label>
+                <div class="feedback correct">¡Correcto! La jerarquía es Sitio, Dominio, OU (de principal a secundaria).</div>
+                <div class="feedback incorrect">Incorrecto. La jerarquía de aplicación de las GPO es Sitio, Dominio, OU (de principal a secundaria).</div>
+            </div>
+            
+            <div class="question">
+                <p>19. ¿Cuáles son los tres estados posibles de una GPO?</p>
+                <label>
+                    <input type="radio" name="q19" value="a"> a) Activa, Inactiva, En espera
+                </label>
+                <label>
+                    <input type="radio" name="q19" value="b" data-correct="true"> b) Habilitada, Deshabilitada, No configurada
+                </label>
+                <label>
+                    <input type="radio" name="q19" value="c"> c) Aplicada, No aplicada, Parcialmente aplicada
+                </label>
+                <label>
+                    <input type="radio" name="q19" value="d"> d) Alta prioridad, Media prioridad, Baja prioridad
+                </label>
+                <div class="feedback correct">¡Correcto! Los tres estados son Habilitada, Deshabilitada y No configurada.</div>
+                <div class="feedback incorrect">Incorrecto. Los tres estados posibles de una GPO son Habilitada, Deshabilitada y No configurada.</div>
+            </div>
+            
+            <div class="question">
+                <p>20. ¿Cuáles son las dos GPO predeterminadas mencionadas?</p>
+                <label>
+                    <input type="radio" name="q20" value="a"> a) Default User Policy y Default Computer Policy
+                </label>
+                <label>
+                    <input type="radio" name="q20" value="b" data-correct="true"> b) Default Domain Policy y Default Domain Controllers Policy
+                </label>
+                <label>
+                    <input type="radio" name="q20" value="c"> c) Default Security Policy y Default Network Policy
+                </label>
+                <label>
+                    <input type="radio" name="q20" value="d"> d) Default Group Policy y Default OU Policy
+                </label>
+                <div class="feedback correct">¡Correcto! Las dos GPO predeterminadas son Default Domain Policy y Default Domain Controllers Policy.</div>
+                <div class="feedback incorrect">Incorrecto. Las dos GPO predeterminadas mencionadas son Default Domain Policy y Default Domain Controllers Policy.</div>
+            </div>
+            
+            <div class="question">
+                <p>21. ¿Qué es una concesión de direcciones en DHCP?</p>
+                <label>
+                    <input type="radio" name="q21" value="a"> a) La asignación permanente de una dirección IP
+                </label>
+                <label>
+                    <input type="radio" name="q21" value="b" data-correct="true"> b) El tiempo que una dirección IP está asignada a un cliente
+                </label>
+                <label>
+                    <input type="radio" name="q21" value="c"> c) Un método para bloquear direcciones IP
+                </label>
+                <label>
+                    <input type="radio" name="q21" value="d"> d) Un tipo de dirección IP estática
+                </label>
+                <div class="feedback correct">¡Correcto! Una concesión de direcciones es el tiempo que una dirección IP está asignada a un cliente.</div>
+                <div class="feedback incorrect">Incorrecto. Una concesión de direcciones en DHCP es el tiempo que una dirección IP está asignada a un cliente.</div>
+            </div>
+            
+            <div class="question">
+                <p>22. ¿Qué es una reserva en DHCP?</p>
+                <label>
+                    <input type="radio" name="q22" value="a"> a) Una dirección IP que no se puede usar
+                </label>
+                <label>
+                    <input type="radio" name="q22" value="b" data-correct="true"> b) Una dirección IP asignada permanentemente a un dispositivo específico
+                </label>
+                <label>
+                    <input type="radio" name="q22" value="c"> c) Un grupo de direcciones IP guardadas para uso futuro
+                </label>
+                <label>
+                    <input type="radio" name="q22" value="d"> d) Un método para limitar el número de direcciones IP disponibles
+                </label>
+                <div class="feedback correct">¡Correcto! Una reserva es una dirección IP asignada permanentemente a un dispositivo específico.</div>
+                <div class="feedback incorrect">Incorrecto. Una reserva en DHCP es una dirección IP asignada permanentemente a un dispositivo específico.</div>
+            </div>
+            
+            <div class="question">
+                <p>23. ¿Qué es una copia de seguridad incremental?</p>
+                <label>
+                    <input type="radio" name="q23" value="a"> a) Una copia que incluye todos los datos
+                </label>
+                <label>
+                    <input type="radio" name="q23" value="b" data-correct="true"> b) Una copia que solo incluye los cambios desde la última copia de seguridad
+                </label>
+                <label>
+                    <input type="radio" name="q23" value="c"> c) Una copia que se realiza cada hora
+                </label>
+                <label>
+                    <input type="radio" name="q23" value="d"> d) Una copia que solo incluye archivos del sistema
+                </label>
+                <div class="feedback correct">¡Correcto! Una copia de seguridad incremental solo incluye los cambios desde la última copia de seguridad.</div>
+                <div class="feedback incorrect">Incorrecto. Una copia de seguridad incremental es una copia que solo incluye los cambios desde la última copia de seguridad.</div>
+            </div>
+            
+            <div class="question">
+                <p>24. ¿Qué significa que la aplicación de GPO es acumulativa?</p>
+                <label>
+                    <input type="radio" name="q24" value="a"> a) Las GPO se cancelan entre sí
+                </label>
+                <label>
+                    <input type="radio" name="q24" value="b"> b) Solo se aplica la última GPO configurada
+                </label>
+                <label>
+                    <input type="radio" name="q24" value="c" data-correct="true"> c) Las GPO de contenedores secundarios se suman a las de los primarios si no se contradicen
+                </label>
+                <label>
+                    <input type="radio" name="q24" value="d"> d) Todas las GPO se aplican simultáneamente
+                </label>
+                <div class="feedback correct">¡Correcto! La aplicación acumulativa significa que las GPO de contenedores secundarios se suman a las de los primarios si no se contradicen.</div>
+                <div class="feedback incorrect">Incorrecto. La aplicación acumulativa de GPO significa que las GPO de contenedores secundarios se suman a las de los primarios si no se contradicen.</div>
+            </div>
+            
+            <div class="question">
+                <p>25. ¿Qué es un árbol en Active Directory?</p>
+                <label>
+                    <input type="radio" name="q25" value="a"> a) Una representación gráfica de la red
+                </label>
+                <label>
+                    <input type="radio" name="q25" value="b" data-correct="true"> b) Un grupo de dominios que comparten un nombre de dominio común
+                </label>
+                <label>
+                    <input type="radio" name="q25" value="c"> c) Un tipo de unidad organizativa
+                </label>
+                <label>
+                    <input type="radio" name="q25" value="d"> d) Un método de clasificación de usuarios
+                </label>
+                <div class="feedback correct">¡Correcto! Un árbol es un grupo de dominios que comparten un nombre de dominio común.</div>
+                <div class="feedback incorrect">Incorrecto. Un árbol en Active Directory es un grupo de dominios que comparten un nombre de dominio común.</div>
+            </div>
+            
+            <div class="question">
+                <p>26. ¿Cuál es la función del servicio DNS en Active Directory?</p>
+                <label>
+                    <input type="radio" name="q26" value="a"> a) Asignar direcciones IP
+                </label>
+                <label>
+                    <input type="radio" name="q26" value="b"> b) Autenticar usuarios
+                </label>
+                <label>
+                    <input type="radio" name="q26" value="c" data-correct="true"> c) Resolver nombres de dominios a direcciones IP
+                </label>
+                <label>
+                    <input type="radio" name="q26" value="d"> d) Aplicar políticas de grupo
+                </label>
+                <div class="feedback correct">¡Correcto! La función del servicio DNS es resolver nombres de dominios a direcciones IP.</div>
+                <div class="feedback incorrect">Incorrecto. La función del servicio DNS en Active Directory es resolver nombres de dominios a direcciones IP.</div>
+            </div>
+
+            <div class="question">
+                <p>27. ¿Qué es RPC y para qué se utiliza en Active Directory?</p>
+                <label>
+                    <input type="radio" name="q27" value="a" data-correct="true"> a) Remote Procedure Call, para comunicarse con clientes y otros servicios en la red
+                </label>
+                <label>
+                    <input type="radio" name="q27" value="b"> b) Remote Protocol Control, para administrar protocolos de red
+                </label>
+                <label>
+                    <input type="radio" name="q27" value="c"> c) Remote Policy Configuration, para configurar políticas remotamente
+                </label>
+                <label>
+                    <input type="radio" name="q27" value="d"> d) Remote Password Change, para cambiar contraseñas de forma remota
+                </label>
+                <div class="feedback correct">¡Correcto! RPC (Remote Procedure Call) se utiliza para comunicarse con clientes y otros servicios en la red.</div>
+                <div class="feedback incorrect">Incorrecto. RPC significa Remote Procedure Call y se utiliza para comunicarse con clientes y otros servicios en la red.</div>
+            </div>
+            
+            <div class="question">
+                <p>28. ¿Qué es LDAP y cuál es su función en Active Directory?</p>
+                <label>
+                    <input type="radio" name="q28" value="a"> a) Un protocolo de seguridad para encriptar datos
+                </label>
+                <label>
+                    <input type="radio" name="q28" value="b" data-correct="true"> b) Un protocolo para acceder y administrar la información almacenada en el directorio
+                </label>
+                <label>
+                    <input type="radio" name="q28" value="c"> c) Un método para asignar direcciones IP
+                </label>
+                <label>
+                    <input type="radio" name="q28" value="d"> d) Un tipo de política de grupo
+                </label>
+                <div class="feedback correct">¡Correcto! LDAP es un protocolo para acceder y administrar la información almacenada en el directorio.</div>
+                <div class="feedback incorrect">Incorrecto. LDAP es un protocolo para acceder y administrar la información almacenada en el directorio.</div>
+            </div>
+            
+            <div class="question">
+                <p>29. ¿Qué son las opciones de ámbito en DHCP?</p>
+                <label>
+                    <input type="radio" name="q29" value="a" data-correct="true"> a) Configuraciones que se aplican a todos los clientes en un ámbito DHCP
+                </label>
+                <label>
+                    <input type="radio" name="q29" value="b"> b) Métodos para limitar el número de direcciones IP disponibles
+                </label>
+                <label>
+                    <input type="radio" name="q29" value="c"> c) Tipos de direcciones IP que se pueden asignar
+                </label>
+                <label>
+                    <input type="radio" name="q29" value="d"> d) Formas de categorizar los clientes DHCP
+                </label>
+                <div class="feedback correct">¡Correcto! Las opciones de ámbito son configuraciones que se aplican a todos los clientes en un ámbito DHCP.</div>
+                <div class="feedback incorrect">Incorrecto. Las opciones de ámbito en DHCP son configuraciones que se aplican a todos los clientes en un ámbito DHCP.</div>
+            </div>
+            
+            <div class="question">
+                <p>30. ¿Cómo se aplican las políticas de grupo a los usuarios y equipos?</p>
+                <label>
+                    <input type="radio" name="q30" value="a"> a) Manualmente por el administrador
+                </label>
+                <label>
+                    <input type="radio" name="q30" value="b" data-correct="true"> b) Automáticamente basadas en la ubicación en el directorio
+                </label>
+                <label>
+                    <input type="radio" name="q30" value="c"> c) Por votación de los usuarios
+                </label>
+                <label>
+                    <input type="radio" name="q30" value="d"> d) Aleatoriamente
+                </label>
+                <div class="feedback correct">¡Correcto! Las políticas de grupo se aplican automáticamente basadas en la ubicación en el directorio.</div>
+                <div class="feedback incorrect">Incorrecto. Las políticas de grupo se aplican automáticamente basadas en la ubicación en el directorio.</div>
+            </div>
+            
+            <div class="question">
+                <p>31. ¿Qué significa LDAP?</p>
+                <label>
+                    <input type="radio" name="q31" value="a"> a) Local Directory Access Protocol
+                </label>
+                <label>
+                    <input type="radio" name="q31" value="b" data-correct="true"> b) Lightweight Directory Access Protocol
+                </label>
+                <label>
+                    <input type="radio" name="q31" value="c"> c) Long Distance Authentication Protocol
+                </label>
+                <label>
+                    <input type="radio" name="q31" value="d"> d) Linked Domain Administration Protocol
+                </label>
+                <div class="feedback correct">¡Correcto! LDAP significa Lightweight Directory Access Protocol.</div>
+                <div class="feedback incorrect">Incorrecto. LDAP significa Lightweight Directory Access Protocol.</div>
+            </div>
+            
+            <div class="question">
+                <p>32. ¿Cuál es la principal función de LDAP?</p>
+                <label>
+                    <input type="radio" name="q32" value="a"> a) Asignar direcciones IP
+                </label>
+                <label>
+                    <input type="radio" name="q32" value="b" data-correct="true"> b) Gestionar y acceder a información almacenada en un servicio de directorio
+                </label>
+                <label>
+                    <input type="radio" name="q32" value="c"> c) Encriptar comunicaciones de red
+                </label>
+                <label>
+                    <input type="radio" name="q32" value="d"> d) Administrar políticas de grupo
+                </label>
+                <div class="feedback correct">¡Correcto! La principal función de LDAP es gestionar y acceder a información almacenada en un servicio de directorio.</div>
+                <div class="feedback incorrect">Incorrecto. La principal función de LDAP es gestionar y acceder a información almacenada en un servicio de directorio.</div>
+            </div>
+            
+            <div class="question">
+                <p>33. ¿Qué es DIT en el contexto de LDAP?</p>
+                <label>
+                    <input type="radio" name="q33" value="a"> a) Directory Information Technology
+                </label>
+                <label>
+                    <input type="radio" name="q33" value="b"> b) Domain Integration Tool
+                </label>
+                <label>
+                    <input type="radio" name="q33" value="c" data-correct="true"> c) Directory Information Tree
+                </label>
+                <label>
+                    <input type="radio" name="q33" value="d"> d) Data Integration Type
+                </label>
+                <div class="feedback correct">¡Correcto! DIT significa Directory Information Tree en el contexto de LDAP.</div>
+                <div class="feedback incorrect">Incorrecto. DIT en el contexto de LDAP significa Directory Information Tree.</div>
+            </div>
+            
+            <div class="question">
+                <p>34. ¿Cuál es la arquitectura básica de LDAP?</p>
+                <label>
+                    <input type="radio" name="q34" value="a"> a) Peer-to-peer
+                </label>
+                <label>
+                    <input type="radio" name="q34" value="b" data-correct="true"> b) Cliente-servidor
+                </label>
+                <label>
+                    <input type="radio" name="q34" value="c"> c) Maestro-esclavo
+                </label>
+                <label>
+                    <input type="radio" name="q34" value="d"> d) Distribuida
+                </label>
+                <div class="feedback correct">¡Correcto! La arquitectura básica de LDAP es cliente-servidor.</div>
+                <div class="feedback incorrect">Incorrecto. La arquitectura básica de LDAP es cliente-servidor.</div>
+            </div>
+            
+            <div class="question">
+                <p>35. ¿Cuáles son las tres versiones principales de LDAP mencionadas?</p>
+                <label>
+                    <input type="radio" name="q35" value="a" data-correct="true"> a) v1, v2, v3
+                </label>
+                <label>
+                    <input type="radio" name="q35" value="b"> b) v2, v3, v4
+                </label>
+                <label>
+                    <input type="radio" name="q35" value="c"> c) v1, v3, v5
+                </label>
+                <label>
+                    <input type="radio" name="q35" value="d"> d) v1, v2, v4
+                </label>
+                <div class="feedback correct">¡Correcto! Las tres versiones principales de LDAP mencionadas son v1, v2 y v3.</div>
+                <div class="feedback incorrect">Incorrecto. Las tres versiones principales de LDAP mencionadas son v1, v2 y v3.</div>
+            </div>
+            
+            <div class="question">
+                <p>36. ¿Qué mejoras introduce LDAPv3 sobre las versiones anteriores?</p>
+                <label>
+                    <input type="radio" name="q36" value="a"> a) Soporte para TLS/SSL
+                </label>
+                <label>
+                    <input type="radio" name="q36" value="b"> b) Manejo de datos binarios y Unicode
+                </label>
+                <label>
+                    <input type="radio" name="q36" value="c"> c) Soporte para extensiones
+                </label>
+                <label>
+                    <input type="radio" name="q36" value="d" data-correct="true"> d) Todas las anteriores
+                </label>
+                <div class="feedback correct">¡Correcto! LDAPv3 introduce todas estas mejoras: soporte para TLS/SSL, manejo de datos binarios y Unicode, y soporte para extensiones.</div>
+                <div class="feedback incorrect">Incorrecto. LDAPv3 introduce todas estas mejoras: soporte para TLS/SSL, manejo de datos binarios y Unicode, y soporte para extensiones.</div>
+            </div>
+            
+            <div class="question">
+                <p>37. ¿Qué significa dn en LDAP?</p>
+                <label>
+                    <input type="radio" name="q37" value="a"> a) Domain Name
+                </label>
+                <label>
+                    <input type="radio" name="q37" value="b"> b) Directory Node
+                </label>
+                <label>
+                    <input type="radio" name="q37" value="c" data-correct="true"> c) Distinguished Name
+                </label>
+                <label>
+                    <input type="radio" name="q37" value="d"> d) Data Network
+                </label>
+                <div class="feedback correct">¡Correcto! dn en LDAP significa Distinguished Name.</div>
+                <div class="feedback incorrect">Incorrecto. dn en LDAP significa Distinguished Name.</div>
+            </div>
+            
+            <div class="question">
+                <p>38. ¿Qué es cn en LDAP?</p>
+                <label>
+                    <input type="radio" name="q38" value="a"> a) Company Name
+                </label>
+                <label>
+                    <input type="radio" name="q38" value="b" data-correct="true"> b) Common Name
+                </label>
+                <label>
+                    <input type="radio" name="q38" value="c"> c) Connection Number
+                </label>
+                <label>
+                    <input type="radio" name="q38" value="d"> d) Control Node
+                </label>
+                <div class="feedback correct">¡Correcto! cn en LDAP significa Common Name.</div>
+                <div class="feedback incorrect">Incorrecto. cn en LDAP significa Common Name.</div>
+            </div>
+            
+            <div class="question">
+                <p>39. ¿Qué significa dc en LDAP?</p>
+                <label>
+                    <input type="radio" name="q39" value="a"> a) Domain Controller
+                </label>
+                <label>
+                    <input type="radio" name="q39" value="b" data-correct="true"> b) Domain Component
+                </label>
+                <label>
+                    <input type="radio" name="q39" value="c"> c) Data Center
+                </label>
+                <label>
+                    <input type="radio" name="q39" value="d"> d) Directory Configuration
+                </label>
+                <div class="feedback correct">¡Correcto! dc en LDAP significa Domain Component.</div>
+                <div class="feedback incorrect">Incorrecto. dc en LDAP significa Domain Component.</div>
+            </div>
+            
+            <div class="question">
+                <p>40. ¿Qué es LDIF?</p>
+                <label>
+                    <input type="radio" name="q40" value="a" data-correct="true"> a) LDAP Data Interchange Format
+                </label>
+                <label>
+                    <input type="radio" name="q40" value="b"> b) Lightweight Data Interchange Format
+                </label>
+                <label>
+                    <input type="radio" name="q40" value="c"> c) LDAP Data Integration Framework
+                </label>
+                <label>
+                    <input type="radio" name="q40" value="d"> d) Local Directory Information File
+                </label>
+                <div class="feedback correct">¡Correcto! LDIF significa LDAP Data Interchange Format.</div>
+                <div class="feedback incorrect">Incorrecto. LDIF significa LDAP Data Interchange Format.</div>
+            </div>
+            
+            <div class="question">
+                <p>41. ¿Cuál es la función de NSS?</p>
+                <label>
+                    <input type="radio" name="q41" value="a"> a) Network Security Service
+                </label>
+                <label>
+                    <input type="radio" name="q41" value="b" data-correct="true"> b) Name Service Switch
+                </label>
+                <label>
+                    <input type="radio" name="q41" value="c"> c) Node Storage System
+                </label>
+                <label>
+                    <input type="radio" name="q41" value="d"> d) Network Synchronization Service
+                </label>
+                <div class="feedback correct">¡Correcto! NSS significa Name Service Switch.</div>
+                <div class="feedback incorrect">Incorrecto. NSS significa Name Service Switch.</div>
+            </div>
+
+            <div class="question">
+                <p>42. ¿Qué es PAM y para qué se utiliza?</p>
+                <label>
+                    <input type="radio" name="q42" value="a"> a) Privileged Access Management, para gestionar accesos privilegiados
+                </label>
+                <label>
+                    <input type="radio" name="q42" value="b" data-correct="true"> b) Pluggable Authentication Modules, para autenticación
+                </label>
+                <label>
+                    <input type="radio" name="q42" value="c"> c) Protocol Analysis Module, para analizar protocolos de red
+                </label>
+                <label>
+                    <input type="radio" name="q42" value="d"> d) Password Administration Manager, para administrar contraseñas
+                </label>
+                <div class="feedback correct">¡Correcto! PAM significa Pluggable Authentication Modules y se utiliza para autenticación.</div>
+                <div class="feedback incorrect">Incorrecto. PAM significa Pluggable Authentication Modules y se utiliza para autenticación.</div>
+            </div>
+            
+            <div class="question">
+                <p>43. ¿Cuál es el paquete principal del servidor LDAP en OpenLDAP?</p>
+                <label>
+                    <input type="radio" name="q43" value="a"> a) openldap
+                </label>
+                <label>
+                    <input type="radio" name="q43" value="b"> b) ldapd
+                </label>
+                <label>
+                    <input type="radio" name="q43" value="c" data-correct="true"> c) slapd
+                </label>
+                <label>
+                    <input type="radio" name="q43" value="d"> d) ldap-server
+                </label>
+                <div class="feedback correct">¡Correcto! El paquete principal del servidor LDAP en OpenLDAP es slapd.</div>
+                <div class="feedback incorrect">Incorrecto. El paquete principal del servidor LDAP en OpenLDAP es slapd.</div>
+            </div>
+            
+            <div class="question">
+                <p>44. ¿Qué contiene el archivo /etc/ldap/ldap.conf?</p>
+                <label>
+                    <input type="radio" name="q44" value="a"> a) Contraseñas de usuarios LDAP
+                </label>
+                <label>
+                    <input type="radio" name="q44" value="b"> b) Logs del servidor LDAP
+                </label>
+                <label>
+                    <input type="radio" name="q44" value="c" data-correct="true"> c) Parámetros globales de configuración LDAP
+                </label>
+                <label>
+                    <input type="radio" name="q44" value="d"> d) Lista de usuarios LDAP
+                </label>
+                <div class="feedback correct">¡Correcto! El archivo /etc/ldap/ldap.conf contiene parámetros globales de configuración LDAP.</div>
+                <div class="feedback incorrect">Incorrecto. El archivo /etc/ldap/ldap.conf contiene parámetros globales de configuración LDAP.</div>
+            </div>
+            
+            <div class="question">
+                <p>45. ¿Qué función cumple el archivo /etc/nsswitch.conf?</p>
+                <label>
+                    <input type="radio" name="q45" value="a" data-correct="true"> a) Configura las fuentes de información para diferentes servicios
+                </label>
+                <label>
+                    <input type="radio" name="q45" value="b"> b) Almacena contraseñas de red
+                </label>
+                <label>
+                    <input type="radio" name="q45" value="c"> c) Define reglas de firewall
+                </label>
+                <label>
+                    <input type="radio" name="q45" value="d"> d) Configura opciones de red
+                </label>
+                <div class="feedback correct">¡Correcto! El archivo /etc/nsswitch.conf configura las fuentes de información para diferentes servicios.</div>
+                <div class="feedback incorrect">Incorrecto. El archivo /etc/nsswitch.conf configura las fuentes de información para diferentes servicios.</div>
+            </div>
+            
+            <div class="question">
+                <p>46. ¿Cuáles son algunas interfaces gráficas para LDAP mencionadas en el resumen?</p>
+                <label>
+                    <input type="radio" name="q46" value="a"> a) LDAP Explorer y LDAP Browser
+                </label>
+                <label>
+                    <input type="radio" name="q46" value="b" data-correct="true"> b) Apache Directory Studio y PHPLDAPAdmin
+                </label>
+                <label>
+                    <input type="radio" name="q46" value="c"> c) OpenLDAP GUI y LDAP Manager
+                </label>
+                <label>
+                    <input type="radio" name="q46" value="d"> d) Active Directory Users and Computers
+                </label>
+                <div class="feedback correct">¡Correcto! Apache Directory Studio y PHPLDAPAdmin son interfaces gráficas mencionadas para LDAP.</div>
+                <div class="feedback incorrect">Incorrecto. Apache Directory Studio y PHPLDAPAdmin son algunas de las interfaces gráficas mencionadas para LDAP.</div>
+            </div>
+
+
+            <div class="question">
+                <p>47. ¿Qué dependencias se mencionan para trabajar con LDAP?</p>
+                <label>
+                    <input type="radio" name="q47" value="a" data-correct="true"> a) libnss-ldap y libpam-ldap
+                </label>
+                <label>
+                    <input type="radio" name="q47" value="b"> b) openssl y libssl
+                </label>
+                <label>
+                    <input type="radio" name="q47" value="c"> c) apache2 y php
+                </label>
+                <label>
+                    <input type="radio" name="q47" value="d"> d) mysql y postgresql
+                </label>
+                <div class="feedback correct">¡Correcto! libnss-ldap y libpam-ldap son las dependencias mencionadas para trabajar con LDAP.</div>
+                <div class="feedback incorrect">Incorrecto. Las dependencias mencionadas para trabajar con LDAP son libnss-ldap y libpam-ldap.</div>
+            </div>
+            
+            <div class="question">
+                <p>48. ¿Qué es Samba y cuál es su relación con Active Directory?</p>
+                <label>
+                    <input type="radio" name="q48" value="a"> a) Un protocolo de red, no relacionado con Active Directory
+                </label>
+                <label>
+                    <input type="radio" name="q48" value="b" data-correct="true"> b) Un servidor de archivos que puede actuar como controlador de dominio de AD
+                </label>
+                <label>
+                    <input type="radio" name="q48" value="c"> c) Una herramienta de backup, usada para respaldar Active Directory
+                </label>
+                <label>
+                    <input type="radio" name="q48" value="d"> d) Un cliente de correo electrónico compatible con Active Directory
+                </label>
+                <div class="feedback correct">¡Correcto! Samba es un servidor de archivos que puede actuar como controlador de dominio de AD.</div>
+                <div class="feedback incorrect">Incorrecto. Samba es un servidor de archivos que puede actuar como controlador de dominio de AD.</div>
+            </div>
+            
+            <div class="question">
+                <p>49. ¿Qué versión de Samba permite que un equipo actúe como controlador de dominio de AD?</p>
+                <label>
+                    <input type="radio" name="q49" value="a"> a) Samba 3
+                </label>
+                <label>
+                    <input type="radio" name="q49" value="b" data-correct="true"> b) Samba 4
+                </label>
+                <label>
+                    <input type="radio" name="q49" value="c"> c) Samba 5
+                </label>
+                <label>
+                    <input type="radio" name="q49" value="d"> d) Samba 2
+                </label>
+                <div class="feedback correct">¡Correcto! Samba 4 permite que un equipo actúe como controlador de dominio de AD.</div>
+                <div class="feedback incorrect">Incorrecto. La versión de Samba que permite que un equipo actúe como controlador de dominio de AD es Samba 4.</div>
+            </div>
+            
+            <div class="question">
+                <p>50. ¿Qué comando se usa para promover un equipo a controlador de dominio en Samba?</p>
+                <label>
+                    <input type="radio" name="q50" value="a"> a) samba-promote
+                </label>
+                <label>
+                    <input type="radio" name="q50" value="b" data-correct="true"> b) samba-tool domain provision
+                </label>
+                <label>
+                    <input type="radio" name="q50" value="c"> c) samba-dc-create
+                </label>
+                <label>
+                    <input type="radio" name="q50" value="d"> d) samba-setup-dc
+                </label>
+                <div class="feedback correct">¡Correcto! El comando para promover un equipo a controlador de dominio en Samba es 'samba-tool domain provision'.</div>
+                <div class="feedback incorrect">Incorrecto. El comando para promover un equipo a controlador de dominio en Samba es 'samba-tool domain provision'.</div>
+            </div>
+            
+            <div class="question">
+                <p>51. ¿Qué significa la opción -x en los comandos LDAP?</p>
+                <label>
+                    <input type="radio" name="q51" value="a"> a) Ejecutar en modo extendido
+                </label>
+                <label>
+                    <input type="radio" name="q51" value="b" data-correct="true"> b) Usar autenticación simple
+                </label>
+                <label>
+                    <input type="radio" name="q51" value="c"> c) Excluir ciertos atributos
+                </label>
+                <label>
+                    <input type="radio" name="q51" value="d"> d) Activar el modo de depuración
+                </label>
+                <div class="feedback correct">¡Correcto! La opción -x en los comandos LDAP significa usar autenticación simple.</div>
+                <div class="feedback incorrect">Incorrecto. La opción -x en los comandos LDAP se usa para autenticación simple.</div>
+            </div>
+            
+            <div class="question">
+                <p>52. ¿Para qué se utiliza la opción -D en los comandos LDAP?</p>
+                <label>
+                    <input type="radio" name="q52" value="a"> a) Para especificar el directorio de trabajo
+                </label>
+                <label>
+                    <input type="radio" name="q52" value="b" data-correct="true"> b) Para especificar el nombre distinguido (DN) del usuario
+                </label>
+                <label>
+                    <input type="radio" name="q52" value="c"> c) Para habilitar el modo de depuración
+                </label>
+                <label>
+                    <input type="radio" name="q52" value="d"> d) Para especificar la base de búsqueda
+                </label>
+                <div class="feedback correct">¡Correcto! La opción -D se utiliza para especificar el nombre distinguido (DN) del usuario.</div>
+                <div class="feedback incorrect">Incorrecto. La opción -D en los comandos LDAP se utiliza para especificar el nombre distinguido (DN) del usuario.</div>
+            </div>
+            
+            <div class="question">
+                <p>53. ¿Qué hace la opción -W en los comandos LDAP?</p>
+                <label>
+                    <input type="radio" name="q53" value="a"> a) Escribe los resultados en un archivo
+                </label>
+                <label>
+                    <input type="radio" name="q53" value="b"> b) Activa el modo de espera
+                </label>
+                <label>
+                    <input type="radio" name="q53" value="c" data-correct="true"> c) Solicita la contraseña de forma interactiva
+                </label>
+                <label>
+                    <input type="radio" name="q53" value="d"> d) Especifica el ancho de la salida
+                </label>
+                <div class="feedback correct">¡Correcto! La opción -W solicita la contraseña de forma interactiva.</div>
+                <div class="feedback incorrect">Incorrecto. La opción -W en los comandos LDAP solicita la contraseña de forma interactiva.</div>
+            </div>
+            
+            <div class="question">
+                <p>54. ¿Cuál es la función del comando slapcat?</p>
+                <label>
+                    <input type="radio" name="q54" value="a"> a) Cataloga los archivos del servidor LDAP
+                </label>
+                <label>
+                    <input type="radio" name="q54" value="b" data-correct="true"> b) Crea una copia de seguridad de la base de datos LDAP
+                </label>
+                <label>
+                    <input type="radio" name="q54" value="c"> c) Comprueba la configuración del servidor LDAP
+                </label>
+                <label>
+                    <input type="radio" name="q54" value="d"> d) Crea un nuevo árbol de directorios LDAP
+                </label>
+                <div class="feedback correct">¡Correcto! El comando slapcat crea una copia de seguridad de la base de datos LDAP.</div>
+                <div class="feedback incorrect">Incorrecto. La función del comando slapcat es crear una copia de seguridad de la base de datos LDAP.</div>
+            </div>
+            
+            <div class="question">
+                <p>55. ¿Qué es Apache Directory Studio?</p>
+                <label>
+                    <input type="radio" name="q55" value="a"> a) Un servidor web para LDAP
+                </label>
+                <label>
+                    <input type="radio" name="q55" value="b" data-correct="true"> b) Una interfaz gráfica para administrar LDAP
+                </label>
+                <label>
+                    <input type="radio" name="q55" value="c"> c) Un plugin de Apache para LDAP
+                </label>
+                <label>
+                    <input type="radio" name="q55" value="d"> d) Una herramienta de línea de comandos para LDAP
+                </label>
+                <div class="feedback correct">¡Correcto! Apache Directory Studio es una interfaz gráfica para administrar LDAP.</div>
+                <div class="feedback incorrect">Incorrecto. Apache Directory Studio es una interfaz gráfica para administrar LDAP.</div>
+            </div>
+            
+            <div class="question">
+                <p>56. ¿Qué significa BASE en la configuración de LDAP?</p>
+                <label>
+                    <input type="radio" name="q56" value="a"> a) El nombre base del servidor LDAP
+                </label>
+                <label>
+                    <input type="radio" name="q56" value="b" data-correct="true"> b) La base de búsqueda predeterminada para las consultas LDAP
+                </label>
+                <label>
+                    <input type="radio" name="q56" value="c"> c) El directorio base donde se instala LDAP
+                </label>
+                <label>
+                    <input type="radio" name="q56" value="d"> d) La configuración básica de LDAP
+                </label>
+                <div class="feedback correct">¡Correcto! BASE en la configuración de LDAP es la base de búsqueda predeterminada para las consultas LDAP.</div>
+                <div class="feedback incorrect">Incorrecto. BASE en la configuración de LDAP se refiere a la base de búsqueda predeterminada para las consultas LDAP.</div>
+            </div>
+            
+            <div class="question">
+                <p>57. ¿Qué es URI en el contexto de la configuración LDAP?</p>
+                <label>
+                    <input type="radio" name="q57" value="a"> a) User Resource Identifier
+                </label>
+                <label>
+                    <input type="radio" name="q57" value="b" data-correct="true"> b) Uniform Resource Identifier
+                </label>
+                <label>
+                    <input type="radio" name="q57" value="c"> c) Unique Resource Index
+                </label>
+                <label>
+                    <input type="radio" name="q57" value="d"> d) LDAP Data Access Point
+                </label>
+                <div class="feedback correct">¡Correcto! URI en el contexto de la configuración LDAP significa Uniform Resource Identifier.</div>
+                <div class="feedback incorrect">Incorrecto. URI en el contexto de la configuración LDAP significa Uniform Resource Identifier.</div>
+            </div>
+            
+            <div class="question">
+                <p>58. ¿Qué comando se usa para comprobar la integridad de la configuración de Samba?</p>
+                <label>
+                    <input type="radio" name="q58" value="a"> a) samba-check
+                </label>
+                <label>
+                    <input type="radio" name="q58" value="b"> b) samba-verify
+                </label>
+                <label>
+                    <input type="radio" name="q58" value="c" data-correct="true"> c) testparm
+                </label>
+                <label>
+                    <input type="radio" name="q58" value="d"> d) samba-test
+                </label>
+                <div class="feedback correct">¡Correcto! El comando testparm se usa para comprobar la integridad de la configuración de Samba.</div>
+                <div class="feedback incorrect">Incorrecto. El comando testparm se usa para comprobar la integridad de la configuración de Samba.</div>
+            </div>
+            
+            <div class="question">
+                <p>59. ¿Cuál es la función de Winbind en relación con Samba?</p>
+                <label>
+                    <input type="radio" name="q59" value="a"> a) Proporcionar acceso a archivos Windows
+                </label>
+                <label>
+                    <input type="radio" name="q59" value="b"> b) Crear copias de seguridad de archivos Windows
+                </label>
+                <label>
+                    <input type="radio" name="q59" value="c" data-correct="true"> c) Permitir que los sistemas Linux usen la información de usuarios y grupos de Windows
+                </label>
+                <label>
+                    <input type="radio" name="q59" value="d"> d) Convertir formatos de archivo entre Windows y Linux
+                </label>
+                <div class="feedback correct">¡Correcto! Winbind permite que los sistemas Linux usen la información de usuarios y grupos de Windows.</div>
+                <div class="feedback incorrect">Incorrecto. La función de Winbind es permitir que los sistemas Linux usen la información de usuarios y grupos de Windows.</div>
+            </div>
+
+            <div class="question">
+                <p>60. ¿Qué es LightDM y cómo se relaciona con LDAP?</p>
+                <label>
+                    <input type="radio" name="q60" value="a"> a) Un protocolo ligero de LDAP
+                </label>
+                <label>
+                    <input type="radio" name="q60" value="b"> b) Una base de datos LDAP ligera
+                </label>
+                <label>
+                    <input type="radio" name="q60" value="c" data-correct="true"> c) Un gestor de sesiones en Ubuntu que puede integrarse con LDAP
+                </label>
+                <label>
+                    <input type="radio" name="q60" value="d"> d) Una herramienta de administración LDAP
+                </label>
+                <div class="feedback correct">¡Correcto! LightDM es un gestor de sesiones en Ubuntu que puede integrarse con LDAP.</div>
+                <div class="feedback incorrect">Incorrecto. LightDM es un gestor de sesiones en Ubuntu que puede integrarse con LDAP.</div>
+            </div>
+            
+            <div class="question">
+                <p>61. ¿Qué ventaja ofrece Samba en entornos heterogéneos?</p>
+                <label>
+                    <input type="radio" name="q61" value="a"> a) Mejora la velocidad de la red
+                </label>
+                <label>
+                    <input type="radio" name="q61" value="b" data-correct="true"> b) Permite una configuración sencilla para la comunicación entre sistemas NFS y SMB
+                </label>
+                <label>
+                    <input type="radio" name="q61" value="c"> c) Proporciona mejor seguridad que los sistemas Windows nativos
+                </label>
+                <label>
+                    <input type="radio" name="q61" value="d"> d) Reduce el consumo de recursos del sistema
+                </label>
+                <div class="feedback correct">¡Correcto! Samba permite una configuración sencilla para la comunicación entre sistemas NFS y SMB en entornos heterogéneos.</div>
+                <div class="feedback incorrect">Incorrecto. La ventaja de Samba en entornos heterogéneos es que permite una configuración sencilla para la comunicación entre sistemas NFS y SMB.</div>
+            </div>
+
+
+        </form>
+        <div class="progress">
+            <div class="progress-bar"></div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('quizForm').addEventListener('change', function(e) {
+            if (e.target.type === 'radio') {
+                var question = e.target.closest('.question');
+                var correctAnswer = question.querySelector('input[data-correct="true"]');
+                var feedbackCorrect = question.querySelector('.feedback.correct');
+                var feedbackIncorrect = question.querySelector('.feedback.incorrect');
+
+                if (e.target === correctAnswer) {
+                    feedbackCorrect.style.display = 'block';
+                    feedbackIncorrect.style.display = 'none';
+                    question.style.borderLeft = '5px solid #2ecc71';
+                } else {
+                    feedbackCorrect.style.display = 'none';
+                    feedbackIncorrect.style.display = 'block';
+                    question.style.borderLeft = '5px solid #e74c3c';
+                }
+
+                updateProgress();
+            }
+        });
+
+        function updateProgress() {
+            var totalQuestions = document.querySelectorAll('.question').length;
+            var answeredQuestions = document.querySelectorAll('.question input:checked').length;
+            var progressPercentage = (answeredQuestions / totalQuestions) * 100;
+            document.querySelector('.progress-bar').style.width = progressPercentage + '%';
+        }
+    </script>
+</body>
+</html>
